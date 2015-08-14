@@ -1,0 +1,43 @@
+<template name="appBody">
+  <div id="container" class="{{menuOpen}} {{cordova}}">
+    <section id="menu">
+      <button class="btns-group"><a href="{{pathFor 'signin'}}" class="btn-secondary">Se connecter</a></button>
+      <button class="btns-group"><a href="{{pathFor 'join'}}" class="btn-secondary">Enregistrer</a></button>
+      <div class="list-todos">
+        <a class="js-new-list link-list-new"><span class="icon-cog"></span>Paramètres</a>
+        <a href="{{pathFor 'listsShow'}}" class="list-todo" title="Les nouveautés">
+            Les nouveautés<span class="count-list">5</span>
+        </a><a href="{{pathFor 'listsProduits'}}" class="list-todo" title="Nos produits">
+            Nos produits<span class="count-list">10</span>
+        </a>
+          <a href="{{pathFor 'listsConseils'}}" class="list-todo" title="Nos conseils">
+            Nos conseils<span class="count-list">0</span>
+        </a>
+          <a href="{{pathFor 'listsDossiers'}}" class="list-todo" title="Nos dossiers">
+            Nos dossiers<span class="count-list">2</span>
+        </a>
+          <a href="{{pathFor 'listsServices'}}" class="list-todo" title="Nos services">
+            Nos services<span class="count-list">6</span>
+        </a>
+      </div>
+    </section>
+
+    {{#unless connected}}
+      <div class="notifications">
+        <div class="notification">
+          <span class="icon-sync"></span>
+          <div class="meta">
+            <div class="title-notification">Initialiser la connexion</div>
+            <div class="description">Erreur de connexion</div>
+          </div>
+        </div>
+      </div>
+    {{/unless}}
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{> yield}}
+    </div>
+  </div>
+</template>
