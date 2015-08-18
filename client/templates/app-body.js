@@ -72,7 +72,7 @@ Template.appBody.helpers({
   },
   activeListClass: function() {
     var current = Router.current();
-    if (current.route.name === 'listsShow' && current.params._id === this._id) {
+    if (current.route.name === 'listsNouveaute' && current.params._id === this._id) {
       return 'active';
     }
   },
@@ -110,12 +110,12 @@ Template.appBody.events({
     
     // if we are on a private list, we'll need to go to a public one
     var current = Router.current();
-    if (current.route.name === 'listsShow' && current.data().userId) {
-      Router.go('listsShow');
+    if (current.route.name === 'listsNouveaute' && current.data().userId) {
+      Router.go('listsNouveaute');
     }
   },
 
   'click .js-new-list': function() {
-    Router.go('listsShow');
+    Router.go('listsNouveaute');
   }
 });
