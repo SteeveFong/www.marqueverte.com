@@ -1,5 +1,6 @@
 App.info({
-  name: 'Marque Verte',
+  id: 'com.pharmagest.marqueverte.chapeau',
+  name: 'Chapeau Marque Verte',
   description: 'Les services Marque Verte',
   author: 'Pharmagest Interactive',
   email: 'steeve.fong@pharmagest.mu',
